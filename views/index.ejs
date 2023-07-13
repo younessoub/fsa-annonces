@@ -22,35 +22,14 @@
         </div>
         <% }) %>
       </section>
-      <!-- <section class="sidebar">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, quisquam corrupti? Eveniet atque reprehenderit esse est, repellat vero laborum tenetur hic sit ipsum necessitatibus corporis, quibusdam dignissimos eligendi architecto ducimus.
-            Omnis molestias voluptas ratione expedita blanditiis suscipit ea minus illum magnam soluta accusantium numquam, nisi quo dicta necessitatibus, similique voluptatem itaque laudantium reiciendis iste, nemo assumenda iusto. Id, tempore voluptatem.
-            Quisquam ex, officia labore sunt commodi dignissimos, voluptate sint fugiat expedita architecto illo eum corporis at? Dignissimos voluptas dolorum incidunt mollitia facilis hic? Ut consequuntur animi fugiat voluptatum, natus eaque!
-            Sunt nulla dolorem quo veritatis mollitia aspernatur maiores non exercitationem ipsam quidem ab illo cum explicabo dolorum magnam, sint, voluptatem, necessitatibus omnis vero? Molestiae, veritatis fugiat! Quae repellat esse numquam?
-            Quod blanditiis consequatur modi tempora odio consectetur perspiciatis, provident accusantium eius facere a voluptates rem maxime, amet, officia soluta! Officiis, sit ducimus. Laborum veritatis architecto laboriosam quibusdam nesciunt quae accusamus?
-            Rerum inventore nostrum doloribus quas placeat repellat, suscipit perferendis animi quia corrupti eum provident neque libero assumenda minus tempore hic, harum enim in dolore. Totam hic ducimus magni cupiditate nam!
-            Sapiente suscipit commodi ex vero quas, repellat, in quisquam odit illo eaque animi quibusdam numquam cum. Et nemo, deserunt eum libero tempora, sed magnam dolores quas expedita corporis excepturi voluptatibus.
-            Expedita similique officiis dolore porro perspiciatis placeat labore sapiente corporis dolorum, corrupti reprehenderit obcaecati quas laborum illo distinctio dolor laudantium molestiae error optio doloribus, exercitationem eum! Omnis quo aperiam explicabo.
-            Voluptatem eligendi rem quae magnam accusamus odit hic, porro delectus est maxime, cupiditate asperiores illo repellendus consectetur quia culpa! Voluptatem recusandae suscipit voluptatibus aspernatur debitis deleniti sint officia, deserunt dolorum.
-            Corporis fuga ad enim? Quos tempore cupiditate deserunt ea! Repellendus earum aspernatur officiis officia ipsa qui libero. Expedita maxime pariatur, beatae vel dolorum odio eligendi debitis rerum accusamus saepe! Praesentium!
-            Alias molestias tempore minus neque repudiandae iusto necessitatibus rerum natus eos deserunt voluptatibus ad, ut repellat, quis cupiditate expedita, tempora asperiores quod? Obcaecati, iusto reiciendis? Eveniet velit provident ipsum consequuntur.
-            Est, nulla sit atque itaque omnis quis quod delectus voluptatum soluta harum ipsam! Laudantium nostrum itaque accusantium! Dicta minus unde odit tenetur accusantium quidem amet optio molestiae excepturi, nemo maxime?
-            Similique neque a magnam fuga incidunt, ea libero molestiae, dolores nobis quaerat dolor sequi laboriosam aut perspiciatis, ratione maiores dolorem hic. Aspernatur ipsam atque, temporibus deserunt ratione ipsa laborum error.
-            Ex in nesciunt commodi voluptate sit tempora, nemo vero placeat aut sint dolores maiores quibusdam explicabo est eos illo, assumenda dignissimos libero vitae ab nihil velit adipisci accusamus? Quidem, explicabo!
-            Rerum possimus provident nesciunt eum facere nobis tempora, laboriosam recusandae. Veniam hic libero sed labore cumque dolores ipsum molestiae, sit, excepturi soluta aliquid minus adipisci? Aut dolor quas quisquam dolore.
-            Quaerat repudiandae, impedit perferendis tempora sunt dolor mollitia. Minus impedit quibusdam modi alias distinctio adipisci illum quas, ipsum iure id consequuntur eaque, nihil numquam harum officia, error excepturi nobis aliquam.
-            Sequi velit necessitatibus quis incidunt molestiae quae provident debitis nulla cumque, totam autem consequuntur tempora ducimus, doloremque, quam vel. Dolorum reiciendis molestiae ad facere perferendis modi explicabo veniam, non nisi.
-            Deleniti, itaque culpa! Quia saepe beatae officiis aspernatur consequuntur culpa neque ipsum, provident ipsam recusandae magni accusantium, eius dolorum excepturi a veniam fugit dicta dolor tempore, repellat illo. Dolores, doloremque.
-            Harum ad provident eligendi ratione ipsum ipsa voluptates minus rem ipsam placeat, obcaecati optio, aliquam facilis architecto eos. Fugiat adipisci ut enim eveniet. Numquam dicta quis, maiores soluta eligendi obcaecati!
-            Repellat tempora minus commodi quae laborum esse. Saepe reiciendis officiis doloremque labore accusamus fuga veniam dolores facilis. Itaque blanditiis labore suscipit necessitatibus quod, unde, accusantium odio autem ea delectus distinctio.
-        </section> -->
+      
     </main>
 
     <script>
       const imgs = document.querySelectorAll("img");
 
       imgs.forEach((img) => {
-        const imgPath = img.src.replace("http://localhost:3000", "");
+        const imgPath = img.src.replace(/https?:\/\/[^\/]+/g, "");
         img.src = "http://www.fsa.ac.ma" + imgPath;
         img.referrerPolicy = "no-referrer";
       });
