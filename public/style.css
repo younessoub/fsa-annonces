@@ -1,87 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,800;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,800;1,800&display=swap");
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    overflow-x: auto;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  overflow-x: auto;
 }
 
-:root{
-    --color-1:#023047;
-    --color-2:#219ebc;
-    --color-3:#ffb703;
-    --color-4:#fb8500;
-    --color-5:#8ecae6;
-
-
+:root {
+  --color-1: #023047;
+  --color-2: #219ebc;
+  --color-3: #ffb703;
+  --color-4: #fb8500;
+  --color-5: #8ecae6;
 }
 
-body{
-    background-color: var(--color-1);
-    color: white;
-    
+body {
+  background-color: var(--color-1);
+  color: white;
 }
 
-img{
-    width: 100% !important;
+img {
+  max-width: 100%;
+  /* height: auto !important; */
 }
 
-header{
-    padding: 20px;
+header {
+  padding: 20px;
 }
 
-.headerWrapper{
-    max-width: 800px;
+.headerWrapper {
+  max-width: 800px;
 }
 
-h1{
-    color: var(--color-4);
-    font-style: italic;
-    font-size: 40px;
+h1 {
+  color: var(--color-4);
+  font-style: italic;
+  font-size: 40px;
 }
 
-main{
-    margin-top: 30px;
-    padding: 0 20px;
-    display: flex;
-    gap: 20px;
+main {
+  margin-top: 30px;
+  padding: 0 20px;
+  display: flex;
+  gap: 20px;
 }
 
-.mainContent{
-    flex:1.5;
-    
+.mainContent {
+  flex: 1.5;
 }
 
-.card{
-    border: 1px solid var(--color-3);
-    padding: 10px;
-    border-radius: 10px;
-    margin-top: 20px;
-   
+.card {
+  border: 1px solid var(--color-3);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
-h2{
-    color: var(--color-3);
+h2 {
+  color: var(--color-3);
 }
 
-.cardContent{
-    color: black;
-    text-align: center;
-    
+.cardContent {
+  color: black;
+  text-align: center;
 }
 
 /* .cardContent div div{
     overflow-x: scroll;
 } */
 
-.sidebar{
-    flex: .5;
+.sidebar {
+  flex: 0.5;
 }
 
-@media (max-width:600px) {
-    .sidebar{
-        display: none;
-    }
+@media (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
 }

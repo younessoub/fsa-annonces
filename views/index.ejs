@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>fsa</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-       <div class="headerWrapper"> 
+      <div class="headerWrapper">
         <h1>FSA</h1>
-       </div>
+      </div>
     </header>
     <main>
-        <section class="mainContent">
-            <% data[0].forEach((title, ind)=>{%>
-                <div class="card">
-                    <h2><%= title %></h2>
-                    <hr style="margin: 5px 0 20px 0;">
-                    <div class="cardContent">
-                        <%- data[1][ind] %>
-                        
-                    </div>
-                </div>
-            <% }) %>
-        </section>
-        <!-- <section class="sidebar">
+      <section class="mainContent">
+        <% data[0].forEach((title, ind)=>{%>
+        <div class="card">
+          <h2><%= title %></h2>
+          <hr style="margin: 5px 0 20px 0" />
+          <div class="cardContent"><%- data[1][ind] %></div>
+        </div>
+        <% }) %>
+      </section>
+      <!-- <section class="sidebar">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, quisquam corrupti? Eveniet atque reprehenderit esse est, repellat vero laborum tenetur hic sit ipsum necessitatibus corporis, quibusdam dignissimos eligendi architecto ducimus.
             Omnis molestias voluptas ratione expedita blanditiis suscipit ea minus illum magnam soluta accusantium numquam, nisi quo dicta necessitatibus, similique voluptatem itaque laudantium reiciendis iste, nemo assumenda iusto. Id, tempore voluptatem.
             Quisquam ex, officia labore sunt commodi dignissimos, voluptate sint fugiat expedita architecto illo eum corporis at? Dignissimos voluptas dolorum incidunt mollitia facilis hic? Ut consequuntur animi fugiat voluptatum, natus eaque!
@@ -49,16 +46,14 @@
         </section> -->
     </main>
 
-    <div><img src="http://www.fsa.ac.ma/file/examens/2023/Printemps/Calend_previsionnel_print_2022-23.jpg" alt="img">
-    </div>
     <script>
-        const imgs = document.querySelectorAll('img')
+      const imgs = document.querySelectorAll("img");
 
-        // imgs.forEach(img=>{
-        //     const imgPath = img.src.replace('http://localhost:3000', '')
-        //     img.src = 'http://www.fsa.ac.ma'+imgPath
-        // })
+      imgs.forEach((img) => {
+        const imgPath = img.src.replace("http://localhost:3000", "");
+        img.src = "http://www.fsa.ac.ma" + imgPath;
+        img.referrerPolicy = "no-referrer";
+      });
     </script>
-</body>
-
+  </body>
 </html>
