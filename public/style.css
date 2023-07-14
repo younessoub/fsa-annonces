@@ -22,8 +22,9 @@ body {
 }
 
 img {
-  max-width: 100% !important;
-  /* height: auto !important; */
+  max-width: 80vw;
+  max-height: 500px; 
+ 
 }
 
 header {

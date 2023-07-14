@@ -27,6 +27,22 @@ app.set("view engine", "ejs");
 
 app.use(express.static("public"));
 
+app.get('/file', async (req, res) => {
+  const imageUrl = req.query.url;
+
+  try {
+    const response = await fetch(imageUrl);
+    const buffer = await response.buffer();
+    const contentType = response.headers.get('content-type');
+
+    res.set('Content-Type', contentType);
+    res.send(buffer);
+  } catch (error) {
+    console.error('Error fetching image:', error);
+    res.sendStatus(500);
+  }
+});
+
 app.get("/", async (req, res) => {
   const scrapedData = await readScrapedData();
   res.render("index", { data:  scrapedData });

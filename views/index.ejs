@@ -32,7 +32,8 @@
 
       imgs.forEach((img) => {
         const imgPath = img.src.replace(/https?:\/\/[^\/]+/g, "");
-        img.src = "http://www.fsa.ac.ma" + imgPath;
+        console.log(window.location.hostname)
+        img.src = 'https://'+ window.location.hostname + imgPath
         img.referrerPolicy = "no-referrer";
       });
     </script>
