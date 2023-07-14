@@ -9,7 +9,9 @@
   <body>
     <header>
       <div class="headerWrapper">
-        <h1>FSA</h1>
+      
+        <h1>FSA-annonces</h1>
+        
       </div>
     </header>
     <main>
@@ -26,7 +28,7 @@
     </main>
 
     <script>
-      const imgs = document.querySelectorAll("img");
+      const imgs = document.querySelectorAll("img:not(.org)");
 
       imgs.forEach((img) => {
         const imgPath = img.src.replace(/https?:\/\/[^\/]+/g, "");

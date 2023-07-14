@@ -1,9 +1,11 @@
 const express = require("express");
 const app = express();
 
+require('dotenv').config()
+
 const scraper = require("./controllers/scraper");
 
-const port = 3000;
+const port = process.env.PORT || 5000;
 
 app.set("view engine", "ejs");
 
