@@ -1,4 +1,8 @@
 const puppeteer = require('puppeteer')
+const fs = require('fs');
+
+
+
 
 const scrapeWebsite = async ()=>{
     const url = 'http://www.fsa.ac.ma'
@@ -20,11 +24,16 @@ const scrapeWebsite = async ()=>{
       
       
         await browser.close();
-
+        
         return [titles, contents];
     }
 
     const data = await run()
+    // Assuming you have scrapedData as an object/array representing the scraped data
+    const dataJson = JSON.stringify(data);
+
+    // Save the data to a file
+    fs.writeFileSync('scraped-data.json', dataJson);
     return data;
 
 }
