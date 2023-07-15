@@ -3,6 +3,7 @@ const app = express();
 const cron = require("node-cron");
 const fs = require("fs").promises;
 const axios = require("axios");
+const puppeteer = require("puppeteer");
 
 const dotenv = require("dotenv");
 const scraper = require("./controllers/scraper");
@@ -30,22 +31,46 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.get("/file*", async (req, res) => {
-
   try {
     const path = req.originalUrl;
-    const url = 'http://www.fsa.ac.ma'+ path;
-    console.log(url)
-    const { data, headers } = await axios.get(url, {
-      responseType: "arraybuffer",
-    });
+    const url = 'http://www.fsa.ac.ma' + path;
+    console.log(url);
 
-    res.set("Content-Type", headers["content-type"]);
-    res.send(data);
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+
+    // Set the viewport size to ensure the desired image size
+    // await page.setViewport({ width: 1280, height: 720 });
+
+    await page.goto(url);
+    const imageBuffer = await page.screenshot({ encoding: "binary" });
+
+    await browser.close();
+
+    res.setHeader("Content-Type", "image/png");
+    res.send(imageBuffer);
   } catch (error) {
     console.error("Error fetching image:", error);
     res.sendStatus(500);
   }
 });
+// app.get("/file*", async (req, res) => {
+
+//   try {
+//     const path = req.originalUrl;
+//     const url = 'http://www.fsa.ac.ma'+ path;
+//     console.log(url)
+//     const { data, headers } = await axios.get(url, {
+//       responseType: "arraybuffer",
+//     });
+
+//     res.set("Content-Type", headers["content-type"]);
+//     res.send(data);
+//   } catch (error) {
+//     console.error("Error fetching image:", error);
+//     res.sendStatus(500);
+//   }
+// });
 
 app.get("/", async (req, res) => {
   const scrapedData = await readScrapedData();
