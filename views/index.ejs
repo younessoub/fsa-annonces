@@ -32,7 +32,7 @@
 
       imgs.forEach((img) => {
         const imgPath = img.src.replace(/https?:\/\/[^\/]+/g, "");
-        console.log(window.location.hostname)
+        //console.log(window.location.hostname)
         img.src = 'https://'+ window.location.hostname + imgPath
         img.referrerPolicy = "no-referrer";
       });
