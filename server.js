@@ -28,10 +28,11 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.get('/file', async (req, res) => {
-  const imageUrl = req.query.url;
-
+  const url = req.query.url;
+  console.log(req.query.url)
   try {
-    const response = await fetch(imageUrl);
+    const imgUrl = url.replace(/https?:\/\/[^\/]+/g, "http://www.fsa.ac.ma");
+    const response = await fetch(imgUrl);
     const buffer = await response.buffer();
     const contentType = response.headers.get('content-type');
 
