@@ -34,6 +34,7 @@ app.get("/file*", async (req, res) => {
   try {
     const path = req.originalUrl;
     const url = 'http://www.fsa.ac.ma'+ path;
+    console.log(url)
     const { data, headers } = await axios.get(url, {
       responseType: "arraybuffer",
     });
