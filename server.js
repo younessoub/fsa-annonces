@@ -77,21 +77,21 @@ app.get("/", async (req, res) => {
   res.render("index", { data: scrapedData });
 });
 
-app.get("/file", async (req, res) => {
-  const imageUrl = req.query.url;
-  console.log(imageUrl);
-  try {
-    const response = await fetch(imageUrl);
-    const buffer = await response.buffer();
-    const contentType = response.headers.get("content-type");
+// app.get("/file", async (req, res) => {
+//   const imageUrl = req.query.url;
+//   console.log(imageUrl);
+//   try {
+//     const response = await fetch(imageUrl);
+//     const buffer = await response.buffer();
+//     const contentType = response.headers.get("content-type");
 
-    res.set("Content-Type", contentType);
-    res.send(buffer);
-  } catch (error) {
-    console.error("Error fetching image:", error);
-    res.sendStatus(500);
-  }
-});
+//     res.set("Content-Type", contentType);
+//     res.send(buffer);
+//   } catch (error) {
+//     console.error("Error fetching image:", error);
+//     res.sendStatus(500);
+//   }
+// });
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
