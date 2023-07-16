@@ -9,9 +9,7 @@
   <body>
     <header>
       <div class="headerWrapper">
-      
         <h1>FSA-annonces</h1>
-        
       </div>
     </header>
     <main>
@@ -24,16 +22,15 @@
         </div>
         <% }) %>
       </section>
-      
     </main>
 
     <script>
       const imgs = document.querySelectorAll("img:not(.org)");
 
       imgs.forEach((img) => {
-        const imgPath = img.src.replace(/https?:\/\/[^\/]+/g, "");
+        // const imgPath = img.src.replace(/https?:\/\/[^\/]+/g, "");
         //console.log(window.location.hostname)
-        img.src = 'https://'+ window.location.hostname + imgPath
+        // img.src = 'https://'+ window.location.hostname + imgPath
         img.referrerPolicy = "no-referrer";
       });
     </script>
